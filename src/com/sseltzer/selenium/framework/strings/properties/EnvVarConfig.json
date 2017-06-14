@@ -1,0 +1,60 @@
+{
+  "configs": [
+    {
+      "name": "environment",
+      "values": [
+        "local",
+        "dev",
+        "tst",
+        "prd"
+      ]
+    }, {
+      "name": "server",
+      "values": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }, {
+      "name": "browser",
+      "values": [
+        "chrome",
+        "firefox",
+        "ie"
+      ]
+    }, {
+      "name": "logging",
+      "values": [
+        "savelog"
+      ]
+    }, {
+      "name": "screenshotonfail",
+      "values": []
+    }, {
+      "name": "ftpaddress",
+      "values": []
+    }, {
+      "name": "build_number",
+      "values": []
+    }, {
+      "name": "imagepath",
+      "values": []
+    }, {
+      "name": "loggingRecord",
+      "values": []
+	}, {
+      "name": "couponCountPath",
+      "values": []
+    }, {
+      "name": "mobiledevice",
+      "values": []
+    }, {
+      "name": "mobileapppath",
+      "values": []
+    }, {
+      "name": "mobileapp",
+      "values": []
+    }
+  ]
+}
