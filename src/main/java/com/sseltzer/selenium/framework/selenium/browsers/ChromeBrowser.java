@@ -1,18 +1,13 @@
 package com.sseltzer.selenium.framework.selenium.browsers;
 
-import java.io.File;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.sseltzer.selenium.framework.selenium.wrappers.WebDriverWrapper;
 
 class ChromeBrowser extends Browser {
-	private ChromeDriverService service;
-//	private static final String CHROMEDRIVER_PATH = "/c:/selenium_drivers/chromedriver.exe";
-	private static final String CHROMEDRIVER_PATH = "/usr/local/bin/chromedriver";
+	private static final String CHROMEDRIVER_PATH = "src/main/resources/chromedriver";
 
 	/**
 	 * Create and set the WebDriver for the Browser object. This is unique to each WebDriver instance being
@@ -42,10 +37,6 @@ class ChromeBrowser extends Browser {
 	public void quit() {
 		if (getWebDriver() != null) {
 			getWebDriver().quit();
-		}
-		if (service != null) {
-			service.stop();
-			service = null;
 		}
 	}
 }

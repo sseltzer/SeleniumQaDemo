@@ -7,7 +7,7 @@ import com.sseltzer.selenium.framework.selenium.wrappers.WebDriverWrapper;
 
 class FirefoxBrowser extends Browser {
 	
-	private static final String DRIVER_PATH = "/usr/local/bin/geckodriver";
+	private static final String DRIVER_PATH = "src/main/resources/geckodriver";
 
 
 	/**
