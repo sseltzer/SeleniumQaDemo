@@ -25,16 +25,10 @@ class ChromeBrowser extends Browser {
 	 */
 	@Override
 	public void setWebDriver() {
-		service = new ChromeDriverService.Builder().usingDriverExecutable(new File(CHROMEDRIVER_PATH)).usingAnyFreePort().build();
-		try {
-			service.start();
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage(), e);
-		}
+		System.setProperty("webdriver.chrome.driver", CHROMEDRIVER_PATH);
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--disable-extensions");
-		WebDriver webDriver = new ChromeDriver(service, chromeOptions);
-//		WebDriver webDriver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
+		WebDriver webDriver = new ChromeDriver(chromeOptions);
 		super.webDriverWrapper = WebDriverWrapper.convert(webDriver);
 
 	}
