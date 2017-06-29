@@ -1,5 +1,7 @@
 package com.sseltzer.selenium.framework.selenium.browsers;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -7,7 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import com.sseltzer.selenium.framework.selenium.wrappers.WebDriverWrapper;
 
 class ChromeBrowser extends Browser {
-	private static final String CHROMEDRIVER_PATH = "src/main/resources/chromedriver";
+	private static final String DRIVER_PATH = "drivers/osx/chromedriver";
+	private static final ClassLoader classLoader = Browser.class.getClassLoader();
 
 	/**
 	 * Create and set the WebDriver for the Browser object. This is unique to each WebDriver instance being
@@ -20,7 +23,8 @@ class ChromeBrowser extends Browser {
 	 */
 	@Override
 	public void setWebDriver() {
-		System.setProperty("webdriver.chrome.driver", CHROMEDRIVER_PATH);
+		File file = new File(classLoader.getResource(DRIVER_PATH).getFile());	
+		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--disable-extensions");
 		WebDriver webDriver = new ChromeDriver(chromeOptions);

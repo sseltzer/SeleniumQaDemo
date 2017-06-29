@@ -1,5 +1,7 @@
 package com.sseltzer.selenium.framework.selenium.browsers;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -7,7 +9,8 @@ import com.sseltzer.selenium.framework.selenium.wrappers.WebDriverWrapper;
 
 class FirefoxBrowser extends Browser {
 	
-	private static final String DRIVER_PATH = "src/main/resources/geckodriver";
+	private static final String DRIVER_PATH = "drivers/osx/geckodriver";
+	private static final ClassLoader classLoader = Browser.class.getClassLoader();
 
 
 	/**
@@ -19,7 +22,8 @@ class FirefoxBrowser extends Browser {
 	 */
 	@Override
 	public void setWebDriver() {
-		System.setProperty("webdriver.gecko.driver", DRIVER_PATH);
+		File file = new File(classLoader.getResource(DRIVER_PATH).getFile());	
+		System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
 		WebDriver webDriver = new FirefoxDriver();
 		super.webDriverWrapper = WebDriverWrapper.convert(webDriver);
 	}
