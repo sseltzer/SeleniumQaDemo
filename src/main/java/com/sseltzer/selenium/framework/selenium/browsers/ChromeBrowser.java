@@ -9,9 +9,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import com.sseltzer.selenium.framework.selenium.wrappers.WebDriverWrapper;
 
 class ChromeBrowser extends Browser {
-	private static final String DRIVER_PATH = "drivers/osx/chromedriver";
 	private static final ClassLoader classLoader = Browser.class.getClassLoader();
+	
+	private static final String DRIVER_PATH_OSX = "drivers/osx/chromedriver";
+	private static final String DRIVER_PATH_WIN = "drivers/windows/chromedriver.exe";
 
+	private String getDriverPath() {
+		String osName = System.getProperty("os.name").toLowerCase();
+		if (osName.contains("windows")) return DRIVER_PATH_WIN;
+		else if (osName.contains("mac")) return DRIVER_PATH_OSX;
+		return DRIVER_PATH_OSX;
+	}
 	/**
 	 * Create and set the WebDriver for the Browser object. This is unique to each WebDriver instance being
 	 * requested for each Browser.
@@ -23,7 +31,7 @@ class ChromeBrowser extends Browser {
 	 */
 	@Override
 	public void setWebDriver() {
-		File file = new File(classLoader.getResource(DRIVER_PATH).getFile());	
+		File file = new File(classLoader.getResource(getDriverPath()).getFile());	
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--disable-extensions");
