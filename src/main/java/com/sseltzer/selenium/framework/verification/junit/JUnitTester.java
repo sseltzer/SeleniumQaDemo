@@ -654,7 +654,7 @@ public class JUnitTester {
 
 	private void verifyAttributeStrNotNull(FillDataBuilder fillData, String attrStr) {
 		if (attrStr != null) return;
-		ErrorManager.throwAndDump(PublicErrorStrings.ELEMENT_ATTR_NOT_EXIST, fillData.add(attrStr));
+		ErrorManager.throwAndDump(PublicErrorStrings.ELEMENT_ATTR_NOT_EXIST, fillData.add(""));
 	}
 
 	/**
