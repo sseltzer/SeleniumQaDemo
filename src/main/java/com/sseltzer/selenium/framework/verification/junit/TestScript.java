@@ -145,7 +145,7 @@ public class TestScript {
 	 */
 	@After
 	public void wrapupTest() {
-		getBrowser().closeAllWindowsNotMatchingExactTitle(WebPage.getCurrentPage().interactWithFrame().getPageTitle());
+		if (WebPage.getCurrentPage() != null) getBrowser().closeAllWindowsNotMatchingExactTitle(WebPage.getCurrentPage().interactWithFrame().getPageTitle());
 		ArrayList<FrameworkException> exceptions = ErrorManager.getExceptions();
 		if (exceptions.size() > 0) {
 			StringBuffer exceptionStr = new StringBuffer();
