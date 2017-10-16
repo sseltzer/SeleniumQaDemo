@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Dimension;
@@ -266,9 +267,13 @@ public abstract class Browser {
 	/**
 	 * Returns a Predicate which returns whether or not the expected string equals the expected
 	 */
+
 	private Predicate<String> equalsString(final String expected) {
 		return new Predicate<String>() {
 			public boolean apply(String found) { return found.equals(expected); }
+			public boolean test(String input) {
+				return apply(input);
+			}
 		};
 	}
 	
@@ -278,6 +283,9 @@ public abstract class Browser {
 	private Predicate<String> containsString(final String expected) { 
 		return new Predicate<String>() {
 			public boolean apply(String found) { return found.contains(expected); }
+			public boolean test(String input) {
+				return apply(input);
+			}
 		};
 	}
 	
@@ -287,6 +295,9 @@ public abstract class Browser {
 	private Predicate<String> matchesRegexString(final String expected) {
 		return new Predicate<String>() {
 			public boolean apply(String found) { return found.matches(expected); }
+			public boolean test(String input) {
+				return apply(input);
+			}
 		};
 	}
 	
@@ -296,6 +307,9 @@ public abstract class Browser {
 	private Predicate<String> notEqualsString(final String expected) {
 		return new Predicate<String>() {
 			public boolean apply(String found) { return !found.equals(expected); }
+			public boolean test(String input) {
+				return apply(input);
+			}
 		};
 	}
 	
@@ -305,6 +319,9 @@ public abstract class Browser {
 	private Predicate<String> notContainsString(final String expected) { 
 		return new Predicate<String>() {
 			public boolean apply(String found) { return !found.contains(expected); }
+			public boolean test(String input) {
+				return apply(input);
+			}
 		};
 	}
 	
@@ -314,6 +331,9 @@ public abstract class Browser {
 	private Predicate<String> notMatchesRegexString(final String expected) {
 		return new Predicate<String>() {
 			public boolean apply(String found) { return !found.matches(expected); }
+			public boolean test(String input) {
+				return apply(input);
+			}
 		};
 	}
 	
