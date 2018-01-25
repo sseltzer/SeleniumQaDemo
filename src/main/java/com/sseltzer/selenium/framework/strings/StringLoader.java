@@ -9,7 +9,7 @@ import com.sseltzer.selenium.framework.error.ErrorManager;
 
 public class StringLoader {
 	
-	private static String FILE = "/com/sseltzer/selenium/framework/strings/properties/FrameworkStrings.json";
+	private static String FILE = "/properties/FrameworkStrings.json";
 	
 	public static final String READ_ERROR = "Could not read file: ";
 	public static final String EMPTY_ERROR = "String file is empty: ";

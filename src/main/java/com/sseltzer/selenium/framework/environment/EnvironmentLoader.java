@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sseltzer.selenium.framework.error.ErrorManager;
 
 public class EnvironmentLoader {
-	private static String CONFIG_FILE = "/com/sseltzer/selenium/framework/strings/properties/EnvVarConfig.json";
+	private static String CONFIG_FILE = "/properties/EnvVarConfig.json";
 
 	private EnvVarConfig configs;
 	private HashMap<String, String> envVariables;
