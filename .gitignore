@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/java,maven,eclipse,intellij
+# Created by https://www.gitignore.io/api/java,macos,maven,eclipse,windows,intellij
 
 ### Eclipse ###
 
@@ -54,10 +54,10 @@ local.properties
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core		
+# Eclipse Core        
 .project
 
-# JDT-specific (Eclipse Java Development Tools)		
+# JDT-specific (Eclipse Java Development Tools)        
 .classpath
 
 ### Intellij ###
@@ -77,6 +77,7 @@ local.properties
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.idea/*
 
 # Gradle:
 .idea/**/gradle.xml
@@ -87,9 +88,6 @@ cmake-build-debug/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
-
-# Lee’s manual override
-.idea/
 
 ## File-based project format:
 *.iws
@@ -152,6 +150,33 @@ modules.xml
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
 ### Maven ###
 target/
 pom.xml.tag
@@ -166,4 +191,26 @@ buildNumber.properties
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
-# End of https://www.gitignore.io/api/java,maven,eclipse,intellij
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# End of https://www.gitignore.io/api/java,macos,maven,eclipse,windows,intellij
