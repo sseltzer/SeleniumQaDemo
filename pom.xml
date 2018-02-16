@@ -70,6 +70,8 @@
 								<argument>+x</argument>
 								<argument>target/classes/drivers/osx/chromedriver</argument>
 								<argument>target/classes/drivers/osx/geckodriver</argument>
+								<argument>target/classes/drivers/windows/geckodriver.exe</argument>
+								<argument>target/classes/drivers/windows/geckodriver.exe</argument>
 							</arguments>
 						</configuration>
 					</execution>
