@@ -103,6 +103,21 @@ public class ElementInteractor extends WebPageAugmentor {
 			ErrorManager.throwAndDump(PublicErrorStrings.ELEMENT_NOT_CLICKABLE, FillDataBuilder.create(pageElement.toString()));
 		}
 	}
+	
+	public void sendKeys(PageObject pageElement, CharSequence[] keys) {
+		sendKeys(pageElement, 0, keys);
+	}
+	public void sendKeys(PageObject pageElement, int i, CharSequence[] keys) {
+		ArgumentValidator.create().validate(pageElement, "pageElement");
+		ArrayList<WebElementWrapper> elements = webPage.locateElement().findElements(pageElement);
+		tester.verifyArrayBounds(i, elements, pageElement);
+		TimingManager.waitForElementVisibleBy(elements.get(i), TimingManager.DEFAULT_TIMING_OPTIONS);
+		try {
+			elements.get(i).sendKeys(keys);
+		} catch (Exception e) {
+			ErrorManager.throwAndDump(PublicErrorStrings.ELEMENT_NOT_CLICKABLE, FillDataBuilder.create(pageElement.toString()));
+		}
+	}
 
 	
 	public void clickByName(PageObject pageElement) {
