@@ -104,10 +104,10 @@ public class ElementInteractor extends WebPageAugmentor {
 		}
 	}
 	
-	public void sendKeys(PageObject pageElement, CharSequence[] keys) {
+	public void sendKeys(PageObject pageElement, CharSequence... keys) {
 		sendKeys(pageElement, 0, keys);
 	}
-	public void sendKeys(PageObject pageElement, int i, CharSequence[] keys) {
+	public void sendKeys(PageObject pageElement, int i, CharSequence... keys) {
 		ArgumentValidator.create().validate(pageElement, "pageElement");
 		ArrayList<WebElementWrapper> elements = webPage.locateElement().findElements(pageElement);
 		tester.verifyArrayBounds(i, elements, pageElement);
